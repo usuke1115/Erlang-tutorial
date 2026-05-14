@@ -25,6 +25,11 @@ returnNumber() ->
     io:format("~B / 5 = ~B.~n", [DecrementedNum, Quotient]),
     io:format("~B % 3 = ~B.~n", [DecrementedNum, Remainder]), 
 
+    %% n# でn進数を表すことができる. (2 <= n <= 36 に限る)
+    Bin = 2#010011, 
+    Hex = 16#AB, 
+    io:format("(010011)2 = ~p. 0xAB = ~p.~n", [Bin, Hex]),
+
     %% 型チェックありの比較演算子が =:= (JSでいうところの === ), =/= (JSでいうところの !== )
     %% ==, /= は型チェックがないので, 基本使わないと思う
     case 4 / 2 =:= 4 div 2 of
