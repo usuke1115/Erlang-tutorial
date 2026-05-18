@@ -9,6 +9,12 @@ return() ->
     %% なので,下の実行結果は 97 (ASCIIコード) が出力される
     io:format("~p~n", [String]),
 
+    FirstName = "Taro", 
+    LastName = "Yamada", 
+    %% 文字列の結合は ++ 演算子である
+    FullName = LastName ++ " " ++ FirstName, 
+    io:format("~s~n", [FullName]), 
+
     Str = [$a, $b, $c],
     case Str =:= "abc" of
         true ->
