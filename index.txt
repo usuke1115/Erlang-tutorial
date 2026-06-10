@@ -1,0 +1,3 @@
+This is the index.txt.
+I like Erlang.
+But He doesn't like Erlang.
