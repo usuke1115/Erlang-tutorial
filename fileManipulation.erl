@@ -1,5 +1,5 @@
 -module(fileManipulation).
--export([start/0, cat/1, readLine/1]).
+-export([start/0, cat/1, readLine/1, appendMessage/0]).
 
 %% file:read_file(Filename)
 %% 上の関数を使い、ファイルを open せずともファイルを読み込むことができる
@@ -31,3 +31,11 @@ readLine(In) ->
             io:format("~s", [Line]), 
             readLine(In)
     end.
+
+%% ファイルの末尾に文字列を書き込むには ?
+%% file:open(filename, [append]) で append mode としてファイルを開く
+%% file:write(Fd, Message) で Messageをファイルに書き込める
+appendMessage() -> 
+    { ok, Line } = file:open("index.txt", [append]), 
+    file:write(Line, "Hello TEXT_FILE From Erlang Program.\n"), 
+    file:close(Line).
